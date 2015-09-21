@@ -1,0 +1,41 @@
+@import '../bower_components/bootstrap/less/bootstrap.less';
+@import '../bower_components/bootstrap-datepicker/less/datepicker3.less';
+@import '../bower_components/fontawesome/less/font-awesome.less';
+
+@icon-font-path: "../bower_components/bootstrap/fonts/";
+
+.vendor(@property, @value) {
+  -webkit-@{property}: @value;
+  -moz-@{property}: @value;
+  @{property}: @value;
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.stat-wrapper{
+  margin-top:20px;
+}
+.server-item{
+  cursor: pointer;
+  &.fired{
+    .licences-wrapper{
+      display: block;
+    }
+  }
+}
+.licences-wrapper{
+  display: none;
+  .progress-bar{
+    color:#464646;
+    .vendor(transition, all 0.5s ease);
+  }
+}
+.licences-wrapper-ul{
+  border: 1px dotted #848484;
+  border-radius: 5px;
+}
+.licences-wrapper-ul li{
+  background-color: #eee;
+}
