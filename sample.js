@@ -4,6 +4,8 @@ var response = [{
   "stats":{
     "name":"MacBook-Pro.local",
     "timestamp":1442559482116,
+    "total":100,
+    "use":(Math.random()*100).toFixed(),
     "license":[{
       "name":"BIOLUMINATE_MAIN",
       "total":10,
@@ -232,6 +234,8 @@ var response = [{
         "stats":{
             "name":"Another 1",
             "timestamp":1442559482116,
+            "total":100,
+            "use":(Math.random()*100).toFixed(),
             "license":[{
                 "name":"BIOLUMINATE_MAIN",
                 "total":10,

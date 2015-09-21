@@ -24,6 +24,7 @@ io.on('connection', function(socket){
     });
     function tmt() {
         io.emit('refresh', sample);
+        //setTimeout(tmt2, 3000);
     }
     console.log('a user connected');
 });

@@ -9911,9 +9911,9 @@ body {
 }
 .licences-wrapper .progress-bar {
   color: #464646;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .licences-wrapper-ul {
   border: 1px dotted #848484;

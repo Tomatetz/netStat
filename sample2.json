@@ -3,6 +3,8 @@
 "stats":{
 "name":"MacBook-Pro.local",
 "timestamp":1442559482116,
+"total":100,
+"use": 70,
 "license":[{
 "name":"BIOLUMINATE_MAIN",
 "total":10,
@@ -231,6 +233,8 @@
 "stats":{
 "name":"Another 1",
 "timestamp":1442559482116,
+"total":100,
+"use": 60,
 "license":[{
 "name":"BIOLUMINATE_MAIN",
 "total":10,
