@@ -2,16 +2,14 @@
 
     var socket = io();
 
-    socket.on('refresh', function(msg){
-        console.log(msg);
+    socket.off().on('refresh', function(msg){
         refreshProgressBar(msg)
-        //makeServersList(msg)
     });
 
     function checkType(quot){
-        if(quot >99){
+        if(quot >90){
             return 'danger'
-        } else if(quot >=80){
+        } else if(quot >=75){
             return 'warning'
         } else if(quot >=50){
             return 'info'
@@ -29,7 +27,9 @@
             $('.servers-ul').append('<li class="list-group-item server-item server-item-'+i+'"><span class="badge">'+server.host+'</span>'+
             server.stats.name +makeProgressBar(server.stats.name, server.stats.use, server.stats.total, i)+'<div class="panel licences-wrapper"><ul class="list-group licences-wrapper-ul"></ul></div></li>');
             $.each(server.stats.license, function(j, license){
-                $('.server-item-'+i+' .licences-wrapper-ul').append('<li class="list-group-item list-group-item-'+j+'">'+this.name+'    ['+this.use+'/'+this.total+']</li>');
+                quotInner = (this.use/this.total*100).toFixed(2);
+                $('.server-item-'+i+' .licences-wrapper-ul').append('<li class="list-group-item list-group-item-'+j+' list-group-item-'+checkType(quotInner)+'">'
+                +this.name+'   <span class="pull-right"> ['+this.use+'/'+this.total+']</span></li>');
             });
         });
     }
@@ -58,7 +58,10 @@
             $('.progress-bar-'+i).removeClass('progress-bar-success progress-bar-danger progress-bar-warning progress-bar-info');
             $('.progress-bar-'+i).css('width', quot+'%').attr('aria-valuenow', quot).html(quot+'%').addClass('progress-bar-'+checkType(quot));
             $.each(server.license, function(j, license){
-                $('.server-item-'+i+' .list-group-item-'+j).html(this.name+'    ['+this.use+'/'+this.total+']')
+                quotInner = (this.use/this.total*100).toFixed(2);
+                $('.server-item-'+i+' .list-group-item-'+j).html(this.name+'    <span class="pull-right"> ['+this.use+'/'+this.total+']</span>');
+                $('.server-item-'+i+' .list-group-item-'+j).removeClass('list-group-item-success list-group-item-danger list-group-item-warning list-group-item-info');
+                $('.server-item-'+i+' .list-group-item-'+j).addClass('list-group-item-'+checkType(quotInner));
             });
         });
     };

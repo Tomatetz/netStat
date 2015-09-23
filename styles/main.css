@@ -9900,6 +9900,11 @@ body {
 .stat-wrapper {
   margin-top: 20px;
 }
+.list-group-item {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
 .server-item {
   cursor: pointer;
 }
@@ -9918,7 +9923,4 @@ body {
 .licences-wrapper-ul {
   border: 1px dotted #848484;
   border-radius: 5px;
-}
-.licences-wrapper-ul li {
-  background-color: #eee;
 }
